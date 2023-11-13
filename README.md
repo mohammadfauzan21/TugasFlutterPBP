@@ -2,7 +2,7 @@ Mohammad Fauzan Aditya
 2206827831
 PBP E
 
-<h1>Tugas 7</h1>
+<h1>Tugas 8</h1>
 
 <h3>1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut 
 yang tepat!</h3>
