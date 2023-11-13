@@ -65,6 +65,7 @@ ListTile(
 
 <h3>2. Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing</h3>
 <p>
+
 1. Container : Widget untuk membungkus elemen-elemen supaya dapat diubah dimensi, padding, margin, dan dekorasi widget turunannya
 2. Center : Widget untuk memusatkan widget turunannya di dalam widget itu sendiri
 3. Expanded : Widget untuk memperluas widget turunannya mengisi ruang yang tersedia
@@ -89,6 +90,7 @@ up item
 <p>
 Clean architecture pada aplikasi Flutter merupakan metode untuk memisahkan kode-kode menjadi suatu lapisan tertentu yang memiliki fungsinya masing-masing dan bersifat
 independen. Di dalam flutter terdapat 3 lapisan utama, yaitu
+
 1. Feature Layer
 Berisikan UI, event handlers dari UI, dan widget. Dengan kata lain, pada bagian ini berfungsi untuk tampilan dari aplikasi dan tidak boleh mengandung logika bisnis
 dan akses langsung ke data
@@ -113,7 +115,6 @@ Prinsip-prinsip Clean Architecture pada Flutter
 
 <h3>5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)</h3>
 <p>
-Checklist 1
 Saya membuat folder baru bernama screens untuk menaruh file baru bernama inventori_form.dart. file baru tersebut berfungsi hanya khusus sebagai form input. 
 Selain itu, saya juga meletakkan file menu.dart di dalam folder screens sebagai bagian dari pemisahan kode-kode. Pada inventori.dart, saya membuat variable baru untuk masing masing input 
 di bagian class yang meng extends FormPage tersebut, berikut kodenya,
