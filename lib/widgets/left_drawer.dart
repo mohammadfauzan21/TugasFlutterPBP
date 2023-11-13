@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inventori/screens/menu.dart';
 import 'package:inventori/screens/inventori_form.dart';
+import 'package:inventori/screens/inventori_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -47,6 +48,20 @@ class LeftDrawer extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => MyHomePage(),
                   ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.checklist),
+            title: const Text('Lihat Item'),
+            // Bagian redirection ke InventoriFormPage
+            onTap: () {
+              // Routing ke InventoriFormPage,
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InventoriListPage(),
+                  )
+              );
             },
           ),
           ListTile(
