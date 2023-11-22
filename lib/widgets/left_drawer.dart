@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:inventori/screens/menu.dart';
 import 'package:inventori/screens/inventori_form.dart';
 import 'package:inventori/screens/inventori_list.dart';
+import 'package:inventori/screens/list_product.dart';
+import 'package:inventori/screens/product_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -27,7 +29,8 @@ class LeftDrawer extends StatelessWidget {
                     ),
                   ),
                   Padding(padding: EdgeInsets.all(10)),
-                  Text("Catat seluruh inventori stok produk di sini!",
+                  Text(
+                    "Catat seluruh inventori stok produk di sini!",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
@@ -36,8 +39,7 @@ class LeftDrawer extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
-          ),
+              )),
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Halaman Utama'),
@@ -51,7 +53,7 @@ class LeftDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.checklist),
+            leading: const Icon(Icons.shopping_basket),
             title: const Text('Lihat Item'),
             // Bagian redirection ke InventoriFormPage
             onTap: () {
@@ -59,9 +61,8 @@ class LeftDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => InventoriListPage(),
-                  )
-              );
+                    builder: (context) => const ProductPage(),
+                  ));
             },
           ),
           ListTile(
@@ -74,8 +75,7 @@ class LeftDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => InventoriFormPage(),
-                  )
-              );
+                  ));
             },
           ),
         ],

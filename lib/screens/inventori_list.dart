@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inventori/widgets/left_drawer.dart';
-import 'package:inventori/model/items.dart';
+import 'package:inventori/models/items.dart';
 
 class InventoriListPage extends StatelessWidget {
   const InventoriListPage({super.key});
@@ -14,7 +14,7 @@ class InventoriListPage extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
       drawer: const LeftDrawer(),
-      body:  ListView.builder(
+      body: ListView.builder(
         primary: true,
         shrinkWrap: true,
         padding: const EdgeInsets.all(20),
@@ -35,6 +35,7 @@ class InventoriListPage extends StatelessWidget {
                           Text('Nama: ${item.itemname}'),
                           Text('Jumlah Item: ${item.amount}'),
                           Text('Deskripsi: ${item.description}'),
+                          Text('Price: ${item.price}'),
                         ],
                       ),
                     ),
@@ -53,9 +54,7 @@ class InventoriListPage extends StatelessWidget {
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
-                side: const BorderSide(
-                    color: Colors.indigo
-                ),
+                side: const BorderSide(color: Colors.indigo),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10),

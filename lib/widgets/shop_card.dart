@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:inventori/screens/inventori_form.dart';
 import 'package:inventori/screens/inventori_list.dart';
+import 'package:inventori/screens/list_product.dart';
+import 'package:inventori/screens/product_list.dart';
+import 'package:inventori/screens/login.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class ShopItem {
   final String name;
@@ -17,17 +22,17 @@ class ShopCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final request = context.watch<CookieRequest>();
     return Material(
       color: item.color,
       child: InkWell(
         // Area responsive terhadap sentuhan
-        onTap: () {
+        onTap: () async {
           // Memunculkan SnackBar ketika diklik
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
-                content: Text("Kamu telah menekan tombol ${item.name}!"))
-            );
+                content: Text("Kamu telah menekan tombol ${item.name}!")));
           // Navigate ke route yang sesuai (tergantung jenis tombol)
           if (item.name == "Tambah Item") {
             Navigator.push(
@@ -35,12 +40,31 @@ class ShopCard extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => InventoriFormPage(),
                 ));
-          }else if (item.name == "Lihat Item"){
+          } else if (item.name == "Lihat Item") {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => InventoriListPage(),
+                  builder: (context) => const ProductPage(),
+
                 ));
+          } else if (item.name == "Logout") {
+            final response =
+                await request.logout("http://localhost:8000/auth/logout/");
+            String message = response["message"];
+            if (response['status']) {
+              String uname = response["username"];
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("$message Sampai jumpa, $uname."),
+              ));
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+              );
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("$message"),
+              ));
+            }
           }
         },
         child: Container(
