@@ -2,7 +2,7 @@ Mohammad Fauzan Aditya
 2206827831
 PBP E
 
-<h1>Tugas 8</h1>
+<h1>Tugas 9</h1>
 
 <h3>1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?</h3>
 <p>
